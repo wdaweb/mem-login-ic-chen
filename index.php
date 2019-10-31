@@ -16,8 +16,8 @@ if(!empty($_GET['s'])) {
 if(!empty($_GET['err'])) {
   echo "登入失敗，帳號或密碼錯誤";
 }
-session_start();
-if(!empty($_SESSION['login'])) {
+// session_start();
+if(!empty($_COOKIE['login'])) {
   echo "你已經登入";
   // header("location:member_center.php");
 }

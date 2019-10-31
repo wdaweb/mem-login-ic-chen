@@ -1,6 +1,6 @@
 <?php
-session_start();
-if(empty($_SESSION['login'])) {
+// session_start();
+if(empty($_COOKIE['login'])) {
   exit();
 }
 ?>
@@ -26,7 +26,7 @@ if(empty($_SESSION['login'])) {
       // $dsn="mysql:host=localhost;dbname=mydb;charset=utf8";
       // $pdo=new PDO($dsn,'root','');
 
-      $sql="SELECT * FROM `user` WHERE `id`='".$_SESSION['id']."'";
+      $sql="SELECT * FROM `user` WHERE `id`='".$_COOKIE['id']."'";
 
       $data=$pdo->query($sql)->fetch();
       // print_r($data);
