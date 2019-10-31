@@ -1,0 +1,7 @@
+$acc
+$pw
+$name
+$addr
+$tel
+$date
+$email

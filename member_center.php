@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(empty($_SESSION['login'])) {
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +21,23 @@
     </div>
     <div class="private">
       <!--請自行設計個人資料的呈現方式並從資料庫取得會員資料-->
+      <?php
+      include("db_info.php");
+      // $dsn="mysql:host=localhost;dbname=mydb;charset=utf8";
+      // $pdo=new PDO($dsn,'root','');
 
+      $sql="SELECT * FROM `user` WHERE `id`='".$_GET['id']."'";
+
+      $data=$pdo->query($sql)->fetch();
+      // print_r($data);
+      ?>
+      <p>帳號：    <?=$data['acc']?></p>
+      <p>密碼：    <?=$data['pw']?></p>
+      <p>姓名：    <?=$data['name']?></p>
+      <p>地址：    <?=$data['addr']?></p>
+      <p>電話：    <?=$data['tel']?></p>
+      <p>生日：    <?=$data['birthday']?></p>
+      <p>電子郵件：<?=$data['email']?></p>
 
 
 

@@ -13,6 +13,13 @@
 if(!empty($_GET['s'])) {
   echo "註冊成功";
 }
+if(!empty($_GET['err'])) {
+  echo "登入失敗，帳號或密碼錯誤";
+}
+session_start();
+if(!empty($_SESSION['login'])) {
+  header("location:member_center.php?do=come");
+}
 ?>
   <h1>會員登入</h1>
 <form action="login_api.php" method="post"> 

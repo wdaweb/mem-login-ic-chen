@@ -24,8 +24,9 @@ echo "<br>";
 echo $email=$_POST['email'];
 echo "<br>";
 
-$dsn="mysql:host=localhost;dbname=mydb;charset=utf8";
-$pdo=new PDO($dsn,'root','');
+include("db_info.php");
+// $dsn="mysql:host=localhost;dbname=mydb;charset=utf8";
+// $pdo=new PDO($dsn,'root','');
 
 $sql="INSERT INTO `user`(`acc`, `pw`, `name`, `addr`, `tel`, `birthday`, `email`) 
 VALUES ('$acc','$pw','$name','$addr','$tel','$date','$email')";
