@@ -15,10 +15,18 @@ echo "<br>";
 $dsn="mysql:host=localhost;dbname=mydb;charset=utf8";
 $pdo=new PDO($dsn,'root','');
 
-$sql="SELECT * FROM `user` WHERE `acc`='$acc' && `pw`='$pw'";
+// $sql="SELECT * FROM `user` WHERE `acc`='$acc' && `pw`='$pw'";
+$sql="SELECT COUNT(*) AS 'num' FROM `user` WHERE `acc`='$acc' && `pw`='$pw'";
 
 $data=$pdo->query($sql)->fetch();
 print_r($data);
+echo "<br>";
+
+if($data['num']==1) {
+  echo "登入成功";
+} else {
+  echo "登入失敗";
+}
 
 
 
