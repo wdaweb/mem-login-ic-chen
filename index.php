@@ -18,7 +18,8 @@ if(!empty($_GET['err'])) {
 }
 session_start();
 if(!empty($_SESSION['login'])) {
-  header("location:member_center.php?do=come");
+  echo "你已經登入";
+  // header("location:member_center.php");
 }
 ?>
   <h1>會員登入</h1>

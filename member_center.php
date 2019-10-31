@@ -26,7 +26,7 @@ if(empty($_SESSION['login'])) {
       // $dsn="mysql:host=localhost;dbname=mydb;charset=utf8";
       // $pdo=new PDO($dsn,'root','');
 
-      $sql="SELECT * FROM `user` WHERE `id`='".$_GET['id']."'";
+      $sql="SELECT * FROM `user` WHERE `id`='".$_SESSION['id']."'";
 
       $data=$pdo->query($sql)->fetch();
       // print_r($data);

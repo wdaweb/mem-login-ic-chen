@@ -26,8 +26,9 @@ echo "<br>";
 session_start();
 if($data['id']) {
   $_SESSION['login']=1;
+  $_SESSION['id']=$data['id'];
   echo "登入成功";
-  header("location:member_center.php?id=".$data['id']);
+  header("location:member_center.php");
 } else {
   echo "登入失敗";
   header("location:index.php?err=1");
