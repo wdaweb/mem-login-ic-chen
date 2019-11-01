@@ -34,13 +34,17 @@ if(empty($_SESSION['login'])) {
       $data=$pdo->query($sql)->fetch();
       // print_r($data);
       ?>
+      <form action="edit_user.php" method="post">
       <p>帳號：    <?=$data['acc']?></p>
       <p>密碼：    <?=$data['pw']?></p>
-      <p>姓名：    <?=$data['name']?></p>
-      <p>地址：    <?=$data['addr']?></p>
-      <p>電話：    <?=$data['tel']?></p>
-      <p>生日：    <?=$data['birthday']?></p>
-      <p>電子郵件：<?=$data['email']?></p>
+      <p>姓名：    <input type="text" name="name" id="name" value="<?=$data['name']?>"></p>
+      <p>地址：    <input type="text" name="addr" id="addr" value="<?=$data['addr']?>"></p>
+      <p>電話：    <input type="text" name="tel" id="tel" value="<?=$data['tel']?>"></p>
+      <p>生日：    <input type="text" name="birthday" id="birthday" value="<?=$data['birthday']?>"></p>
+      <p>電子郵件：<input type="text" name="email" id="email" value="<?=$data['email']?>"></p>
+      <input type="hidden" name="id" id="id" value="<?=$data['id']?>">
+      <input type="submit" value="編輯">
+      </form>
 
 
 
