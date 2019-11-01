@@ -23,12 +23,12 @@ $data=$pdo->query($sql)->fetch();
 print_r($data);
 echo "<br>";
 
-// session_start();
+session_start();
 if($data['id']) {
-  // $_SESSION['login']=1;
-  // $_SESSION['id']=$data['id'];
-  setcookie("login",1,time()+60);
-  setcookie("id",$data['id'],time()+60);
+  $_SESSION['login']=1;
+  $_SESSION['id']=$data['id'];
+  // setcookie("login",1,time()+60);
+  // setcookie("id",$data['id'],time()+60);
   echo "登入成功";
   header("location:member_center.php");
 } else {
